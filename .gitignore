@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Electron compile output
+dist-electron/
+
+# electron-builder output
+release/
+dist/
+
+# Staged app servers for packaging
+desktop-resources/
+
+# Logs / OS
+*.log
+.DS_Store
+
+# Env
+.env
+.env.*
+!.env.example

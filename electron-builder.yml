@@ -1,0 +1,55 @@
+appId: com.obd.billing
+productName: OBD Billing & CRM
+copyright: Copyright © OBD
+
+directories:
+  output: release
+  buildResources: electron/resources
+
+files:
+  - dist-electron/**/*
+  - package.json
+
+# Backend / frontend / Node runtime are copied in afterPack (raw fs copy)
+# so node_modules and .env are not stripped by gitignore filters.
+extraResources: []
+
+afterPack: electron/scripts/after-pack.js
+
+asar: true
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: electron/resources/icon.png
+  artifactName: ${productName}-Setup-${version}.${ext}
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: electron/resources/icon.png
+  category: public.app-category.business
+  artifactName: ${productName}-${version}-${arch}.${ext}
+  # Disable auto code-signing for local packaging (set CSC_LINK / identity for release).
+  identity: null
+
+linux:
+  target:
+    - AppImage
+    - deb
+  icon: electron/resources/icon.png
+  category: Office
+  artifactName: ${productName}-${version}.${ext}
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+publish: null

@@ -1,0 +1,46 @@
+{
+  "name": "billing-crm-backend",
+  "version": "1.0.0",
+  "description": "Billing & CRM SaaS backend",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "seed:admin": "ts-node-dev --transpile-only --exit-child src/scripts/seedAdmin.ts",
+    "repair:invoice-balances": "ts-node-dev --transpile-only --exit-child src/scripts/repairInvoicePaymentBalances.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.8.0",
+    "morgan": "^1.11.0",
+    "multer": "^2.2.0",
+    "pdf-lib": "^1.17.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/compression": "^1.8.1",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.1.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "5.7"
+  }
+}
