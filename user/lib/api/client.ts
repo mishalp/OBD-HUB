@@ -40,7 +40,7 @@ export const apiRequest = async <T>(
   path: string,
   options: RequestOptions = {},
 ): Promise<T> => {
-  const { method = 'GET', body, token, credentials = 'include' } = options;
+  const { method = 'GET', body, token, credentials = 'omit' } = options;
   const isFormData = typeof FormData !== 'undefined' && body instanceof FormData;
 
   const headers: HeadersInit = {
