@@ -6,6 +6,29 @@
     "main"
   ],
   "permissions": [
-    "core:default"
+    "core:default",
+    "shell:default",
+    {
+      "identifier": "shell:allow-spawn",
+      "allow": [
+        {
+          "name": "exec-sh",
+          "cmd": "sh",
+          "args": [
+            "-c",
+            {
+              "validator": "\\S+"
+            }
+          ],
+          "sidecar": false
+        },
+        {
+          "name": "binaries/my-sidecar",
+          "sidecar": true,
+          "args": true
+        }
+      ]
+    },
+    "shell:allow-open"
   ]
 }
