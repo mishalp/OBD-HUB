@@ -313,7 +313,7 @@ export const CustomerSelector = ({
               ) : null}
             </div>
             <Link
-              href={`/customers/${selectedCustomer.id}`}
+              href={`/customers/view?id=${selectedCustomer.id}`}
               className="text-sm font-medium text-[#D32F2F] transition hover:text-[#B71C1C]"
               target="_blank"
             >

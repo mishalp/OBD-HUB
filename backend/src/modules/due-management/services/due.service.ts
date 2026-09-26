@@ -497,7 +497,7 @@ export const getDueDetails = async (
       recordedByName: payment.recordedByName,
     })),
     quickActions: {
-      viewInvoice: `/invoices/${invoice._id.toString()}`,
+      viewInvoice: `/invoices/view?id=${invoice._id.toString()}`,
       recordPayment:
         dueItem.outstandingBalance > 0 &&
         dueItem.dueStatus !== 'Paid' &&

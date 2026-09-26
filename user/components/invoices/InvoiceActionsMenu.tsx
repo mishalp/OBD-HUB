@@ -67,7 +67,7 @@ export const InvoiceActionsMenu = ({
             className={itemClassName}
             onClick={() => {
               setOpen(false);
-              router.push(`/invoices/${invoice.id}`);
+              router.push(`/invoices/view?id=${invoice.id}`);
             }}
           >
             View
@@ -82,7 +82,7 @@ export const InvoiceActionsMenu = ({
             )}
             onClick={() => {
               setOpen(false);
-              router.push(`/invoices/${invoice.id}/edit`);
+              router.push(`/invoices/edit?id=${invoice.id}`);
             }}
           >
             Edit

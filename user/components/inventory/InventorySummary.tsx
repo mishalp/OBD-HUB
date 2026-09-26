@@ -117,7 +117,7 @@ export const InventorySummaryCards = ({
                 >
                   <div>
                     <Link
-                      href={`/items/${row.itemId}`}
+                      href={`/items/view?id=${row.itemId}`}
                       className="text-sm font-medium text-[#D32F2F] hover:text-[#B71C1C]"
                     >
                       View item

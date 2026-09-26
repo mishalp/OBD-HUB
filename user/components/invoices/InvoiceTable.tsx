@@ -84,7 +84,7 @@ export const InvoiceTable = ({
           {invoices.map((invoice) => (
             <tr key={invoice.id} className="transition-colors hover:bg-[#FAFAFA]">
               <td className="px-4 py-3.5.5 font-medium text-[#111827]">
-                <Link href={`/invoices/${invoice.id}`} className="hover:text-[#D32F2F]">
+                <Link href={`/invoices/view?id=${invoice.id}`} className="hover:text-[#D32F2F]">
                   {invoice.invoiceNumber}
                 </Link>
               </td>

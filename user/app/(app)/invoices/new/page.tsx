@@ -220,7 +220,7 @@ export default function CreateInvoicePage() {
             ? `Paid invoice ${response.invoice.invoiceNumber} created`
             : `Invoice ${response.invoice.invoiceNumber} created`,
       );
-      router.push(status === 'Paid' ? `/invoices/${response.invoice.id}` : '/invoices');
+      router.push(status === 'Paid' ? `/invoices/view?id=${response.invoice.id}` : '/invoices');
     } catch (err) {
       if (err instanceof ApiClientError) {
         setServerError(err.message);

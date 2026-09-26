@@ -38,7 +38,7 @@ export const StockMovementTimeline = ({
           Recent Stock Movements
         </h3>
         <Link
-          href={`/items/${itemId}/stock-history`}
+          href={`/items/stock-history?id=${itemId}`}
           className="text-sm font-medium text-[#D32F2F] hover:text-[#B71C1C]"
         >
           View full history

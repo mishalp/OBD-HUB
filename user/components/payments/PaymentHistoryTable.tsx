@@ -65,7 +65,7 @@ export const PaymentHistoryTable = ({ payments, isLoading }: PaymentHistoryTable
           {payments.map((payment) => (
             <tr key={payment.id} className="hover:bg-[#fafbfc]">
               <td className="px-4 py-3 font-medium text-[#111827]">
-                <Link href={`/payments/${payment.id}`} className="hover:text-[#D32F2F]">
+                <Link href={`/payments/view?id=${payment.id}`} className="hover:text-[#D32F2F]">
                   {payment.paymentNumber}
                 </Link>
               </td>

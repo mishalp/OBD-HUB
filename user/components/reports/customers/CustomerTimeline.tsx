@@ -54,8 +54,8 @@ export const CustomerTimeline = ({ items, isLoading = false }: CustomerTimelineP
           {items.map((item) => {
             const href =
               item.type === 'invoice'
-                ? `/invoices/${item.referenceId}`
-                : `/payments/${item.referenceId}`;
+                ? `/invoices/view?id=${item.referenceId}`
+                : `/payments/view?id=${item.referenceId}`;
 
             return (
               <li

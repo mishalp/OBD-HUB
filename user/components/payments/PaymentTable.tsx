@@ -79,14 +79,14 @@ export const PaymentTable = ({
           {payments.map((payment) => (
             <tr key={payment.id} className="transition-colors hover:bg-[#FAFAFA]">
               <td className="px-4 py-3.5 font-medium text-[#111827]">
-                <Link href={`/payments/${payment.id}`} className="hover:text-[#D32F2F]">
+                <Link href={`/payments/view?id=${payment.id}`} className="hover:text-[#D32F2F]">
                   {payment.paymentNumber}
                 </Link>
               </td>
               <td className="px-4 py-3.5 text-[#111827]">
                 {payment.invoice ? (
                   <Link
-                    href={`/invoices/${payment.invoice.id}`}
+                    href={`/invoices/view?id=${payment.invoice.id}`}
                     className="hover:text-[#D32F2F]"
                   >
                     {payment.invoice.invoiceNumber}
@@ -116,7 +116,7 @@ export const PaymentTable = ({
               <td className="px-4 py-3.5 text-[#374151]">{payment.recordedByName || '—'}</td>
               <td className="px-4 py-3.5">
                 <Link
-                  href={`/payments/${payment.id}`}
+                  href={`/payments/view?id=${payment.id}`}
                   className="text-sm font-medium text-[#D32F2F] hover:text-[#B71C1C]"
                 >
                   View

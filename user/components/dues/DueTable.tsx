@@ -82,7 +82,7 @@ export const DueTable = ({
           {dues.map((due) => (
             <tr key={due.invoiceId} className="transition-colors hover:bg-[#FAFAFA]">
               <td className="px-4 py-3.5 font-medium text-[#111827]">
-                <Link href={`/dues/${due.invoiceId}`} className="hover:text-[#D32F2F]">
+                <Link href={`/dues/view?id=${due.invoiceId}`} className="hover:text-[#D32F2F]">
                   {due.invoiceNumber}
                 </Link>
               </td>
@@ -90,7 +90,7 @@ export const DueTable = ({
                 {due.customer ? (
                   <div>
                     <Link
-                      href={`/customers/${due.customer.id}`}
+                      href={`/customers/view?id=${due.customer.id}`}
                       className="font-medium hover:text-[#D32F2F]"
                     >
                       {due.customer.name}
@@ -115,14 +115,14 @@ export const DueTable = ({
               <td className="px-4 py-3.5">
                 <div className="flex flex-wrap gap-2">
                   <Link
-                    href={`/invoices/${due.invoiceId}`}
+                    href={`/invoices/view?id=${due.invoiceId}`}
                     className="text-sm font-medium text-[#D32F2F] hover:text-[#B71C1C]"
                   >
                     View Invoice
                   </Link>
                   {due.customer ? (
                     <Link
-                      href={`/customers/${due.customer.id}`}
+                      href={`/customers/view?id=${due.customer.id}`}
                       className="text-sm font-medium text-[#D32F2F] hover:text-[#B71C1C]"
                     >
                       Customer

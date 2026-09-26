@@ -137,7 +137,7 @@ export const InvoiceReportTable = ({
                   >
                     <td className="px-4 py-3.5">
                       <Link
-                        href={`/invoices/${invoice.id}`}
+                        href={`/invoices/view?id=${invoice.id}`}
                         className="font-medium text-[#D32F2F] hover:underline"
                       >
                         {invoice.invoiceNumber}
@@ -181,7 +181,7 @@ export const InvoiceReportTable = ({
                     </td>
                     <td className="px-4 py-3.5 text-right">
                       <Link
-                        href={`/invoices/${invoice.id}`}
+                        href={`/invoices/view?id=${invoice.id}`}
                         className="text-xs font-semibold text-[#D32F2F] hover:underline"
                       >
                         View Invoice

@@ -109,7 +109,7 @@ export const ItemTable = ({
               <td className="px-4 py-3.5">
                 <div className="flex flex-wrap items-center gap-2">
                   <Link
-                    href={`/items/${item.id}`}
+                    href={`/items/view?id=${item.id}`}
                     className="rounded-md border border-[#E5E7EB] px-2 py-1 text-xs font-medium text-[#D32F2F] hover:bg-[#FEF2F2]"
                   >
                     View

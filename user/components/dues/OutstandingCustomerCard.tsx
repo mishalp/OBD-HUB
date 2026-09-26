@@ -47,7 +47,7 @@ export const OutstandingCustomerCard = ({
                 <tr key={customer.customerId} className="hover:bg-[#fafbfc]">
                   <td className="px-3 py-3">
                     <Link
-                      href={`/customers/${customer.customerId}`}
+                      href={`/customers/view?id=${customer.customerId}`}
                       className="font-medium text-[#111827] hover:text-[#D32F2F]"
                     >
                       {customer.name}

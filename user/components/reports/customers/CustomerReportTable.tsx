@@ -143,7 +143,7 @@ export const CustomerReportTable = ({
                     </td>
                     <td className="px-4 py-3.5 text-right">
                       <Link
-                        href={`/reports/customers/${customer.customerId}`}
+                        href={`/reports/customers/view?id=${customer.customerId}`}
                         className="text-xs font-semibold text-[#D32F2F] hover:underline"
                       >
                         View Report

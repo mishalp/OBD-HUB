@@ -2,9 +2,10 @@ import path from 'path';
 import fs from 'fs';
 import multer from 'multer';
 import { ApiError } from '../utils/ApiError';
+import { getUploadsRoot, ensureUploadsRoot } from '../config/paths';
 
-const uploadsRoot = path.resolve(process.cwd(), 'uploads', 'logos');
-const avatarsRoot = path.resolve(process.cwd(), 'uploads', 'avatars');
+const uploadsRoot = path.join(ensureUploadsRoot(), 'logos');
+const avatarsRoot = path.join(ensureUploadsRoot(), 'avatars');
 
 if (!fs.existsSync(uploadsRoot)) {
   fs.mkdirSync(uploadsRoot, { recursive: true });

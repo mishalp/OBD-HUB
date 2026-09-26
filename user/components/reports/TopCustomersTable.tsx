@@ -115,7 +115,7 @@ export const TopCustomersTable = ({
                       <td className="px-4 py-3.5 text-[#6B7280]">{rank}</td>
                       <td className="px-4 py-3.5">
                         <Link
-                          href={`/customers/${customer.customerId}`}
+                          href={`/customers/view?id=${customer.customerId}`}
                           className="font-medium text-[#D32F2F] hover:underline"
                         >
                           {customer.name}
