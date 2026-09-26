@@ -13,11 +13,7 @@ import { getUploadsRoot } from './config/paths';
 const app = express();
 const uploadsRoot = getUploadsRoot();
 
-app.use(
-  helmet({
-    crossOriginResourcePolicy: { policy: 'cross-origin' },
-  }),
-);
+app.use(helmet());
 app.use(cors());
 
 app.use(compression());
