@@ -27,15 +27,19 @@ pub fn run() {
                     println!("[backend] {:?}", event);
                 }
             });
-            RunEvent::WindowEvent { label, event: WindowEvent::Destroyed, .. } => {
-                // If your main window is destroyed, force kill the entire system tree
-                if label == "main" {
-                    app_handle.exit(0); // This triggers deep cleanup hooks and terminates the OS process
-                }
-            }
-
             Ok(())
         })
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        // .run(tauri::generate_context!())
+        .build(tauri::generate_context!())
+        .expect("error while building tauri application")
+        .run(|app_handle, event| match event {
+            // This monitors window events globally outside of setup
+            tauri::RunEvent::WindowEvent { label, event: tauri::WindowEvent::Destroyed, .. } => {
+                if label == "main" {
+                    // Forcefully terminate the application and its sidecars
+                    std::process::exit(0);
+                }
+            }
+            _ => {}
+        });
 }

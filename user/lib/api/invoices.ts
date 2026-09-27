@@ -64,7 +64,7 @@ export const invoicesApi = {
       response = await fetch(`${getApiBaseUrl()}/api/invoices/${id}/pdf`, {
         method: 'GET',
         headers,
-        credentials: 'include',
+        // credentials: 'include',
       });
     } catch {
       throw new ApiClientError(0, 'Network error. Please check your connection.');
