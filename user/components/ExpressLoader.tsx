@@ -8,7 +8,7 @@ export default function ExpressLoader({ children }: { children: React.ReactNode 
 
     useEffect(() => {
         let attempts = 0;
-        const maxAttempts = 10;
+        const maxAttempts = 50;
 
         const checkServer = async () => {
             try {
