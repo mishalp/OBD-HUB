@@ -212,7 +212,6 @@ function InvoiceDetailsContent() {
           </button>
           <Link
             href={`/invoices/print?id=${invoice.id}`}
-            target="_blank"
             className="rounded-md border border-[#E5E7EB] px-3 py-2 text-sm font-medium text-[#111827] hover:bg-[#FAFAFA]"
           >
             Print Invoice

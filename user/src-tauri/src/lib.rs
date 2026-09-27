@@ -27,6 +27,12 @@ pub fn run() {
                     println!("[backend] {:?}", event);
                 }
             });
+            RunEvent::WindowEvent { label, event: WindowEvent::Destroyed, .. } => {
+                // If your main window is destroyed, force kill the entire system tree
+                if label == "main" {
+                    app_handle.exit(0); // This triggers deep cleanup hooks and terminates the OS process
+                }
+            }
 
             Ok(())
         })
