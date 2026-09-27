@@ -27,6 +27,31 @@ pub fn run() {
                     println!("[backend] {:?}", event);
                 }
             });
+
+             let main_window = app.get_webview_window("main").unwrap();
+
+            // 3. Create a thread that pings Express until it answers
+            std::thread::spawn(move || {
+                let client = reqwest::blocking::Client::new();
+                let health_url = "http://localhost:5000"; // change to your express port
+                
+                let mut attempts = 0;
+                while attempts < 20 {
+                    // Try connecting to Express
+                    if let Ok(res) = client.get(health_url).send() {
+                        if res.status().is_success() {
+                            break; // Express is up! Break out of loop
+                        }
+                    }
+                    // Wait 250ms before trying again
+                    std::thread::sleep(std::time::Duration::from_millis(250));
+                    attempts += 1;
+                }
+
+                // 4. Express is alive, safely show the Next.js frontend now!
+                main_window.show().unwrap();
+            });
+
             Ok(())
         })
         // .run(tauri::generate_context!())
