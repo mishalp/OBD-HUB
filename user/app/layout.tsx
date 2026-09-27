@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from 'next/font/google';
 import { AuthProvider } from '@/lib/auth/AuthContext';
 import { ToastProvider } from '@/components/ui/Toast';
 import './globals.css';
+import ExpressLoader from '@/components/ExpressLoader';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -31,9 +32,11 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans text-[14px] text-[#111827]">
-        <AuthProvider>
-          <ToastProvider>{children}</ToastProvider>
-        </AuthProvider>
+        <ExpressLoader>
+          <AuthProvider>
+            <ToastProvider>{children}</ToastProvider>
+          </AuthProvider>
+        </ExpressLoader>
       </body>
     </html>
   );
